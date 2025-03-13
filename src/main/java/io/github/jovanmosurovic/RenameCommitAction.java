@@ -1,5 +1,6 @@
 package io.github.jovanmosurovic;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -60,7 +61,7 @@ public class RenameCommitAction extends AnAction {
                 project,
                 "Enter new commit message:",
                 "Rename Current Commit",
-                Messages.getQuestionIcon()
+                AllIcons.Actions.Edit
         );
 
         if (newMessage == null || newMessage.trim().isEmpty()) {
