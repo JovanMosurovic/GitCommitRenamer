@@ -20,7 +20,7 @@ public class RenameCommitAction extends AnAction {
 
     @Override
     public @NotNull ActionUpdateThread getActionUpdateThread() {
-        // Most UI-related actions should use EDT
+        // Using EDT for UI
         return ActionUpdateThread.EDT;
     }
 
@@ -33,7 +33,7 @@ public class RenameCommitAction extends AnAction {
         }
 
         GitRepositoryManager manager = GitRepositoryManager.getInstance(project);
-        // Check if there are any Git repositories by getting the collection
+        // Check if there are any Git repositories
         boolean hasGitRepos = !manager.getRepositories().isEmpty();
         e.getPresentation().setEnabledAndVisible(hasGitRepos);
     }
