@@ -5,26 +5,38 @@
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-    <name>Rename-commit</name>
+    <name>Rename-Commit</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor email="mosurovicjovan@gmail.com" url="https://github.com/JovanMosurovic">Personal GitHub</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+        A plugin that adds a "Rename Current Commit" action to the Git menu in IntelliJ IDEA.<br>
+        This allows you to easily rename (amend) the most recent commit in your Git repository.<br>
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>Git4Idea</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
 
     </extensions>
+
+    <actions>
+        <action id="io.github.jovanmosurovic.RenameCommitAction"
+                class="io.github.jovanmosurovic.RenameCommitAction"
+                text="Rename Current Commit"
+                description="Rename the current Git commit">
+                icon="icons/plugin_icon.webp">
+            <add-to-group group-id="Git.MainMenu" anchor="last"/>
+            <add-to-group group-id="Vcs.Log.ContextMenu" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>
