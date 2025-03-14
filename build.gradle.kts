@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "io.github.jovanmosurovic"
-version = "1.0-SNAPSHOT"
+version = "1.0"
 
 repositories {
     mavenCentral()
@@ -16,6 +16,7 @@ repositories {
 intellij {
     version.set("2023.2.6")
     type.set("IC") // Target IDE Platform
+    pluginName.set("GitCommitRenamer")
 
     plugins.set(listOf("Git4Idea"))
 }
